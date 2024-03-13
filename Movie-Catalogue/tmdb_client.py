@@ -1,11 +1,14 @@
 import requests
 import random
 
+
+
+API_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTUwMjVmOGM5YTM5M2NiMTFlNjE5YjE3NGFkN2M4NCIsInN1YiI6IjY1ZjA3ZDdlNjZhN2MzMDE2MmRlODRiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._pmiP1E1F5JvNbruieSt-BtSZxhtNUvFc23L53KgYPM'
+
 def get_popular_movies():
     endpoint = "https://api.themoviedb.org/3/movie/popular"
-    api_token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTUwMjVmOGM5YTM5M2NiMTFlNjE5YjE3NGFkN2M4NCIsInN1YiI6IjY1ZjA3ZDdlNjZhN2MzMDE2MmRlODRiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._pmiP1E1F5JvNbruieSt-BtSZxhtNUvFc23L53KgYPM'
     headers = {
-        'Authorization': f'Bearer {api_token}'
+        'Authorization': f'Bearer {API_TOKEN}'
     }
     response = requests.get(endpoint, headers=headers)
     return response.json()
@@ -20,5 +23,27 @@ def get_movies(how_many):
     data = random.sample(data['results'], k=how_many)
     return data
 
+def get_single_movie(movie_id):
+    endpoint = f"https://api.themoviedb.org/3/movie/{movie_id}"
+    headers = {
+        'Authorization': f'Bearer {API_TOKEN}'
+    }
+    response = requests.get(endpoint, headers=headers)
+    return response.json()
+
+def get_single_movie_cast(movie_id):
+    endpoint = f"https://api.themoviedb.org/3/movie/{movie_id}/credits"
+    headers = {
+        'Authorization': f'Bearer {API_TOKEN}'
+    }
+    response = requests.get(endpoint, headers=headers)
+    return response.json()['cast']
 
 
+def get_single_movie_photo(movie_id):
+    endpoint = f"https://api.themoviedb.org/3/movie/{movie_id}/images"
+    headers = {
+        'Authorization': f'Bearer {API_TOKEN}'
+    }
+    response = requests.get(endpoint, headers=headers)
+    return random.sample(response.json()['backdrops'], k=1)
