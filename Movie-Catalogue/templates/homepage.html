@@ -3,8 +3,15 @@
 <div class="row">
     <div class="col-lg-12 text-center">
         <h1 class="mt-5">Welcome to my Movies Library</h1>
-        <p class="lead">U will find here only the best movies</p>
+        <p class="lead mb-4">U will find here only the best movies</p>
     </div>
+    <div class="col-lg-12 mb-4 text-center btn-group btn-group-toggle" >
+        {% for li in list %}
+            <a href="{{ url_for('homepage', list_type=li.type) }}" class="btn btn-outline-info {% if li['type'] == selected_list %} active {% endif %}">
+                {{li.name}}
+            </a>
+        {% endfor %}
+        </div>
 {% for movie in movies %}
     <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
