@@ -49,7 +49,7 @@ def search(search_query):
     response = make_tmdb_request(endpoint)
     return response['results']
 
-def get_series():
+def get_airing_today():
     endpoint = 'https://api.themoviedb.org/3/tv/airing_today'
     response = make_tmdb_request(endpoint)
     return response['results']

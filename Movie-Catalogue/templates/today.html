@@ -2,21 +2,20 @@
 {% block content %}
 <div class="row">
     <div class="col-lg-12 text-center">
-        <h1 class="mt-5">Welcome to my Movies Library</h1>
-        <p class="lead mb-4">Search results for queries: .. <b>{{search_query}}</b></p>
+        <h1 class="mt-5">Welcome to Movies Library</h1>
+        <p class="lead mb-4">Series Today: {{today}}</p>
     </div>
-{% for movie in movies %}
+    {% for movie in movies %}
     <div class="col-lg-3 col-md-6 mb-4 ">
         <div class="card h-100 div-hover"  >
-            <a href="{{url_for('movie_details', movie_id=movie.id)}}">
             <img class="card-img-top" src="{{tmdb_image_url(movie.poster_path, 'w780')}}" alt="">
             <div class="card-body" style="cursor: pointer;">
-                <h4 class="card-title text-center" style="color: black;" >{{movie.title}}</h4>
-            </a>
+                <h4 class="card-title text-center" style="color: black;" >{{movie.name}}</h4>
             </div>
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
+
 
 {% endblock %}  
