@@ -36,4 +36,22 @@ def get_single_movie_cast(movie_id):
 def get_single_movie_photo(movie_id):
     endpoint = f"https://api.themoviedb.org/3/movie/{movie_id}/images"
     response = make_tmdb_request(endpoint)
-    return random.sample(response['backdrops'], k=1)
+    backdrops = response.get('backdrops', [])
+    if backdrops:
+        return random.sample(backdrops, k=min(len(backdrops), 1))
+    else:
+        return []
+
+
+def search(search_query):
+    base_url = 'https://api.themoviedb.org/3/'
+    endpoint = f'{base_url}search/movie?query={search_query}'
+    response = make_tmdb_request(endpoint)
+    return response['results']
+
+def get_series():
+    endpoint = 'https://api.themoviedb.org/3/tv/airing_today'
+    response = make_tmdb_request(endpoint)
+    return response['results']
+
+
