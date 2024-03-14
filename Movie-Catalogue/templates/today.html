@@ -1,5 +1,17 @@
 {% extends 'index.html' %}
 {% block content %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-info mt-3" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
 <div class="row">
     <div class="col-lg-12 text-center">
         <h1 class="mt-5">Welcome to Movies Library</h1>
@@ -7,12 +19,14 @@
     </div>
     {% for movie in movies %}
     <div class="col-lg-3 col-md-6 mb-4 ">
+        
         <div class="card h-100 div-hover"  >
             <img class="card-img-top" src="{{tmdb_image_url(movie.poster_path, 'w780')}}" alt="">
             <div class="card-body" style="cursor: pointer;">
                 <h4 class="card-title text-center" style="color: black;" >{{movie.name}}</h4>
             </div>
         </div>
+        
     </div>
     {% endfor %}
 </div>

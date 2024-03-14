@@ -14,6 +14,18 @@
             .card-title, .card-title:hover, a{
                 text-decoration: none !important;
             }
+            .icon-click {
+                color: transparent;
+                stroke: black;
+            }
+            .icon-click:hover {
+                stroke: rgb(212, 212, 0);
+            }
+            .icon-click:active {
+                fill: rgb(212, 212, 0);
+                stroke: rgb(212, 212, 0);
+            }
+
         </style>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -24,19 +36,19 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Movie Catalogue</a>
+                <a class="navbar-brand" href="">Movie Catalogue</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{url_for('homepage')}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{url_for('today')}}">Today Playing</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{url_for('today')}}">Favorite</a></li>
-                    </ul>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{url_for('show_favorites')}}">Favorites</a></li>
+                    </ul>    
                 </div>
-                <form class="form-inline" action="/search" method="GET">
-                    <input class="form-control mr-sm-2" type="text" value="{% if search_query %}{{ search_query }}{% endif %}" placeholder="Szukaj" aria-label="Search" name="search_res">
-                    <button button class="btn btn-outline-light" type="submit">Szukaj</button>
-                </form>
+                    <form class="form-inline" action="/search" method="GET">
+                        <input class="form-control mr-sm-2" type="text" value="{% if search_query %}{{ search_query }}{% endif %}" placeholder="Szukaj" aria-label="Search" name="search_res">
+                        <button button class="btn btn-outline-light" type="submit">Szukaj</button>
+                    </form>
             </div>
         </nav>
         <!-- Page content-->
