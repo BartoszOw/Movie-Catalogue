@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import tmdb_client
 
 app = Flask(__name__)
@@ -20,9 +20,14 @@ LIST_TYPES = [
 
 @app.route('/')
 def homepage():
-    
+
     selected_list = request.args.get('list_type', 'popular')
 
+    valid_list_types = [lst['type'] for lst in LIST_TYPES]
+
+    if selected_list not in valid_list_types:
+        return redirect(url_for('homepage', list_type='popular'))
+    
     movies = tmdb_client.get_movies(8, list_type=selected_list)
 
     return render_template('homepage.html', movies=movies, list=LIST_TYPES, selected_list=selected_list)
