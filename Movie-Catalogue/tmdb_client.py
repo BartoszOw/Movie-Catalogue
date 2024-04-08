@@ -17,7 +17,7 @@ def get_movies_list(list_type):
 
 def get_poster_url(poster_api_path, size='w342'):
     base_url = "https://image.tmdb.org/t/p/"
-    return f"{base_url}{size}{poster_api_path}"
+    return f"{base_url}{size}/{poster_api_path}"
 
 def get_movies(how_many, list_type='popular'):
     data = get_movies_list(list_type)
