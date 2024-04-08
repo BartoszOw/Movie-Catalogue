@@ -4,3 +4,4 @@ Movie Catalog made with Flask, TMBD Database
 - Possibility to check series broadcast on a given day
 - Adding to favorites
 - Searching by name
+- Testing some functions
