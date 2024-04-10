@@ -1,9 +1,9 @@
 import requests
 import random
+import os
 
 
-
-API_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTUwMjVmOGM5YTM5M2NiMTFlNjE5YjE3NGFkN2M4NCIsInN1YiI6IjY1ZjA3ZDdlNjZhN2MzMDE2MmRlODRiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._pmiP1E1F5JvNbruieSt-BtSZxhtNUvFc23L53KgYPM'
+API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
 
 def make_tmdb_request(endpoint):
     headers = {'Authorization': f'Bearer {API_TOKEN}'}
