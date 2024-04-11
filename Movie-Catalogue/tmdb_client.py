@@ -5,6 +5,7 @@ import os
 
 API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
 
+
 def make_tmdb_request(endpoint):
     headers = {'Authorization': f'Bearer {API_TOKEN}'}
     response = requests.get(endpoint, headers=headers)
