@@ -9,14 +9,14 @@ Movie Catalogue is a web application built with Flask that allows users to explo
 - View detailed information about a specific movie, including cast members and images.
 - Add favorite movies to a personal favorites list.
 ## Technologies Used
-- Flask: Python web framework used for building the backend server.
-- TMDB API: Source of movie data, providing information about movie details, cast, images, and more.
-- HTML/CSS: Frontend templates and styling.
-- Bootstrap: Frontend framework for responsive design.
-- Python-dotenv: Library for loading environment variables from a .env file.
-- Requests: HTTP library for making API requests.
-- Jinja2: Template engine for rendering dynamic content in HTML templates.
-- Unittest: Python testing framework for writing and running unit tests.
+- ``Flask:`` Python web framework used for building the backend server.
+- ``TMDB API:`` Source of movie data, providing information about movie details, cast, images, and more.
+- ``HTML/CSS:`` Frontend templates and styling.
+- ``Bootstrap:`` Frontend framework for responsive design.
+- ``Python-dotenv:`` Library for loading environment variables from a .env file.
+- `Requests:` HTTP library for making API requests.
+- `Jinja2:` Template engine for rendering dynamic content in HTML templates.
+- `Unittest:` Python testing framework for writing and running unit tests.
 ## Usage
 Clone the repository:
 
