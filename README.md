@@ -1,6 +1,4 @@
 
-Oto propozycja sensownego opisu projektu na GitHub:
-
 Movie Catalogue
 Overview
 Movie Catalogue is a web application built with Flask that allows users to explore a vast collection of movies sourced from the TMDB (The Movie Database) API. Users can discover popular, top-rated, upcoming, and currently playing movies, search for specific titles, view movie details including cast information and images, and add their favorite movies to a personal favorites list.
