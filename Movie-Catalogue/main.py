@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import tmdb_client
 import datetime
-import envs
+
 
 
 app = Flask(__name__)
