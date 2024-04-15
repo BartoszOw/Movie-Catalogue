@@ -21,7 +21,7 @@ Movie Catalogue is a web application built with Flask that allows users to explo
 Clone the repository:
 
 ```
-git clone https://github.com/your_username/movie-catalogue.git
+git clone https://github.com/BartoszOw/Movie-Catalogue.git
 ```
 Install dependencies:
 
