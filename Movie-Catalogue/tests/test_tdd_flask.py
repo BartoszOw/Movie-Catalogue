@@ -1,7 +1,9 @@
+
+from pytest import MonkeyPatch
 from main import app
 from unittest.mock import Mock
 
-def test_homepage(monkeypatch):
+def test_homepage(monkeypatch: MonkeyPatch):
     api_mock = Mock(return_value={'results': []})
     monkeypatch.setattr('tmdb_client.get_movies', api_mock)
 
